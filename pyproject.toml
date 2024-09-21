@@ -1,0 +1,42 @@
+[project]
+name = "demo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.uv]
+dev-dependencies = [
+    "gitlint>=0.19.1",
+    "pre-commit>=3.8.0",
+    "pyright>=1.1.381",
+    "ruff>=0.6.6",
+    "typos>=1.24.6",
+]
+
+[tool.ruff]
+src = ["app"]
+line-length = 79
+show-fixes = true
+unsafe-fixes = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["COM812", "ISC001"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint.pycodestyle]
+max-doc-length = 72
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pyright]
+include = ["app"]
+exclude = ["**/.venv", "**/__pycache__"]
+
+[tool.typos.default.extend-words]
+teh = "teh"
